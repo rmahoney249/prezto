@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vi'
+export VISUAL='vi'
 export PAGER='less'
 
 #
@@ -42,7 +42,10 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  ~/.local/bin
+  ~/bin
   /usr/local/{bin,sbin}
+  /opt/node/bin
   $path
 )
 
@@ -74,3 +77,5 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+export CVS_RSH=ssh
+export CVSROOT=:pserver:mahoneyr@cvs.cnet.com:/cvs/main
